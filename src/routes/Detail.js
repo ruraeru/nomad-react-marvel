@@ -12,6 +12,7 @@ import { fetchCharDetailData } from '../api';
 const Container = styled.div`
     display: flex;
     flex-direction: column;
+    
     height: 100vh;
     width: 100vw;
     background-color: #151515;
@@ -30,15 +31,6 @@ const Content = styled.div`
         margin-top: 10px;
     }      
     background-color: transparent;  
-`;
-
-const BackBtn = styled.button`
-    margin-left: 20px;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 50px;
-    height: 50px;
 `;
 
 const Info = styled.div`
@@ -70,7 +62,6 @@ export default function Detail() {
 
     return (
         <Container>
-            <BackBtn onClick={() => history.goBack()}>Back</BackBtn>
             <Header text={detail.name} />
             {isLoading ? (
                 <Loading />
