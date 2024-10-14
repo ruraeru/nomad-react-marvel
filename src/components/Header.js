@@ -21,6 +21,8 @@ const Title = styled.div`
         text-transform: uppercase;
 
         align-self: center;
+
+        grid-column: 2;
     }
 
     p {
@@ -29,16 +31,15 @@ const Title = styled.div`
 `;
 
 const BackBtn = styled.button`
-
+    display: ${props => props.btnActive ? "block" : "none"};
 `
 
-export default function Header({ text }) {
+export default function Header({ text, btnActive = false }) {
     const history = useHistory();
     return (
         <Title>
-            <BackBtn onClick={() => history.goBack()}>back</BackBtn>
+            <BackBtn btnActive={btnActive} onClick={() => history.goBack()}>back</BackBtn>
             <h1>{text}</h1>
-            {/* <p>(if you want to go back, press me)</p> */}
         </Title>
     );
 }

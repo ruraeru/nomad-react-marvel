@@ -62,7 +62,7 @@ export default function Detail() {
 
     return (
         <Container>
-            <Header text={detail.name} />
+            <Header text={detail.name} btnActive={true} />
             {isLoading ? (
                 <Loading />
             ) : (
